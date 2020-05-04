@@ -1,0 +1,15 @@
+main {
+  display: flex;
+  height: calc(100vh - 50px);
+}
+
+main aside {
+  width: 320px;
+  border-top: 1px solid #fdeeeb;
+  border-right: 1px solid #fdeeeb;
+  background-color: #fafafa;
+}
+
+main div {
+  width: calc(100% - 320px);
+}

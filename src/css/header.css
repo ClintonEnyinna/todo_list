@@ -1,27 +1,36 @@
+header {
+  height: 50px;
+}
+
+nav {
+  height: inherit;
+}
+
 nav {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #fbeeeb;
 }
 
 nav div:first-child {
   height: 100%;
   width: 320px;
   text-align: center;
-  background-color: #99d0fb;
+  background-color: #fafafa;
+  border-right: 1px solid #fdeeeb;
 }
 
 nav div:last-child {
   display: flex;
   height: 100%;
-  background-color: rgba(153, 208, 251, 0.5);
+  background-color: rgba(153, 208, 251, 0.2);
   width: calc(100% - 320px);
 }
 
 nav div:first-child p {
   font-size: 33px;
   font-weight: bold;
-  color: black;
+  color: #fff;
+  color: #234083;
   line-height: 50px;
 }
 
@@ -30,13 +39,14 @@ p {
 }
 
 input[type='text'] {
+  height: 100%;
   width: 100%;
-  padding-left: 10px;
+  padding: 0 0 0 15px;
   font-size: 18px;
   border: none;
   outline: none;
   color: #242e50;
-  background-color: rgba(153, 208, 251, 0);
+  background-color: rgba(153, 208, 251, 0.2);
   transition: all 0.3s;
 }
 

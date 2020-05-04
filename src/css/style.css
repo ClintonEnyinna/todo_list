@@ -2,27 +2,6 @@ body {
   margin: 0;
 }
 
-header {
-  height: 50px;
-}
-
-nav {
-  height: inherit;
-}
-
-main {
-  display: flex;
-  height: calc(100vh - 100px);
-}
-
-main aside {
-  width: 320px;
-}
-
-main div {
-  width: calc(100% - 320px);
-}
-
 footer {
   position: absolute;
   height: 50px;
