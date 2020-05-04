@@ -1,0 +1,49 @@
+nav {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #fbeeeb;
+}
+
+nav div:first-child {
+  height: 100%;
+  width: 320px;
+  text-align: center;
+  background-color: #99d0fb;
+}
+
+nav div:last-child {
+  display: flex;
+  height: 100%;
+  background-color: rgba(153, 208, 251, 0.5);
+  width: calc(100% - 320px);
+}
+
+nav div:first-child p {
+  font-size: 33px;
+  font-weight: bold;
+  color: black;
+  line-height: 50px;
+}
+
+p {
+  margin: 0;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding-left: 10px;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: #242e50;
+  background-color: rgba(153, 208, 251, 0);
+  transition: all 0.3s;
+}
+
+::placeholder {
+  color: #242e50;
+}
+
+input[type='text']:focus {
+  background-color: #fff;
+}
