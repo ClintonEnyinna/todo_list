@@ -18,7 +18,7 @@ const addTodoForm = () => {
   div.style.display = 'none';
   const form = element('FORM');
   const input = element('INPUT');
-  input.setAttribute('placeholder', 'Todo Name...');
+  input.setAttribute('placeholder', 'new activity...');
 
   form.append(input);
   div.append(form);

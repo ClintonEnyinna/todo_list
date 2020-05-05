@@ -22,6 +22,7 @@ aside div:first-child button {
   box-shadow: 3px 3px 7px 0px rgba(0, 0, 0, 0.19);
   cursor: pointer;
   outline: none;
+  transition: all 0.3s;
 }
 
 aside div:first-child button:hover {
@@ -42,7 +43,8 @@ i {
   height: 35px;
   width: 250px;
   border-radius: 5px;
-  border: 2px solid #2c50a3;
+  border: 1px solid #2c50a3;
   padding-left: 10px;
   outline: none;
+  font-size: 18px;
 }

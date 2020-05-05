@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Main from './components/Main';
 import { projectName } from './components/Todos';
 import { todo } from './components/Todo';
+import TodoItem from './components/TodoItem';
 import './css/style.css';
 
 const page = document.querySelector('#content');
@@ -25,6 +26,23 @@ const openTodo = (e) => {
   const mainContent = document.querySelector('#maincontent');
   mainContent.innerHTML = '';
   mainContent.appendChild(todo(e.target.innerText));
+
+  const addTodoItmBtn = document.querySelector('#add-itm-btn');
+  const addItem = document.querySelector('.add-item');
+
+  addTodoItmBtn.addEventListener('click', () => {
+    addItem.classList.toggle('d-none');
+  });
+
+  document.querySelector('.add-item form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const todoItems = document.querySelector('#todo-items');
+    let elements = e.target.elements;
+    console.log(e.target.elements[0]);
+    console.log(todoItems);
+    todoItems.append(TodoItem(elements[0].value, elements[1].value));
+    addItem.classList.toggle('d-none');
+  });
 };
 
 document.querySelector('.projectdiv form').addEventListener('submit', (e) => {
