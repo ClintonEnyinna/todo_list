@@ -1,0 +1,10 @@
+#projects {
+  list-style: none;
+  width: 100%;
+}
+
+#projects li {
+  width: 30px;
+  background-color: rgb(215, 233, 235);
+  padding-top: 20px;
+}

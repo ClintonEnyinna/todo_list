@@ -31,19 +31,46 @@ const openTodo = (e) => {
   const addItem = document.querySelector('.add-item');
 
   addTodoItmBtn.addEventListener('click', () => {
-    addItem.classList.toggle('d-none');
+    if (addItem.style.display === "none") {
+      addItem.style.display = "flex"
+      
+    } else {
+      addItem.style.display = "none"
+
+      
+    }
+    
   });
 
-  document.querySelector('.add-item form').addEventListener('submit', (e) => {
+  const addItemForm = document.querySelector('.add-item form')
+
+  addItemForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const todoItems = document.querySelector('#todo-items');
     let elements = e.target.elements;
     console.log(e.target.elements[0]);
     console.log(todoItems);
     todoItems.append(TodoItem(elements[0].value, elements[1].value));
-    addItem.classList.toggle('d-none');
+    
+    if (addItem.style.display === "none") {
+      addItem.style.display = "flex"
+      
+    } else {
+      addItem.style.display = "none"
+
+      
+    }
+    addItemForm.reset();
   });
+    // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == addItem) {
+      addItem.style.display = "none";
+    }
+  }
 };
+
+
 
 document.querySelector('.projectdiv form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -56,3 +83,5 @@ document.querySelector('.projectdiv form').addEventListener('submit', (e) => {
   plusIcon.classList.replace('fa-times', 'fa-plus');
   e.target.elements[0].value = '';
 });
+
+
