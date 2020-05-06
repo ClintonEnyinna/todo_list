@@ -3,7 +3,7 @@
   padding: 40px;
 }
 
-#maincontent div {
+#maincontent div:first-child {
   width: 100%;
 }
 
@@ -61,6 +61,10 @@
 .add-item form textarea {
   margin-bottom: 10px;
   padding: 7px;
+}
+
+.add-item form div {
+  width: 100%;
 }
 
 .add-item form button {

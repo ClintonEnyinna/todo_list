@@ -1,0 +1,31 @@
+#show-content {
+  position: absolute;
+  flex-direction: column;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  right: 0;
+  width: 50%;
+  max-width: 300px;
+  height: calc(100% - 50px);
+  padding: 25px 10px;
+  box-shadow: -9px 0px 5px 0px rgba(0, 0, 0, 0.01);
+}
+
+#show-content p {
+  overflow-wrap: break-word;
+  width: 100%;
+  height: auto;
+  padding-top: 8px;
+  padding-bottom: 20px;
+}
+
+#show-content h4 {
+  font-size: 20px;
+  text-decoration: underline;
+  text-transform: capitalize;
+}
+
+#show-content label {
+  font-weight: bold;
+}

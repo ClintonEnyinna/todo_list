@@ -15,12 +15,18 @@
   cursor: pointer;
 }
 
+#todo-items div:first-of-type {
+  width: 100%;
+}
+
 #todo-items li h5 {
+  width: 100%;
   margin: 0 0 7px;
   font-size: 18px;
 }
 
 #todo-items li p {
+  width: 100%;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.8);
 }

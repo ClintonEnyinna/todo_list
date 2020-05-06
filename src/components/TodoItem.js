@@ -1,5 +1,6 @@
 import { element, text } from './MakeElements';
 import '../css/todo_item.css';
+import '../css/show_todo.css';
 
 const TodoItem = (title, dueDate) => {
   const li = element('LI');
@@ -36,15 +37,28 @@ const TodoItemShow = (title, dueDate, priority, desc) => {
   const pTxt = text(dueDate);
   p.append(pTxt);
 
-  const divPriority = element('DIV');
+  const pPriority = element('P');
   const priorityTxt = text(priority);
-  divPriority.append(priorityTxt);
+  pPriority.append(priorityTxt);
 
   const pDesc = element('P');
   const descTxt = text(desc);
   pDesc.append(descTxt);
 
-  div.append(h4, p, divPriority, pDesc);
+  //labels
+  const plabelTxt = text('Date');
+  const pLabel = element('LABEL');
+  pLabel.append(plabelTxt);
+
+  const priorityLabelTxt = text('Priority');
+  const priorityLabel = element('LABEL');
+  priorityLabel.append(priorityLabelTxt);
+
+  const descLabelTxt = text('Description');
+  const descLabel = element('LABEL');
+  descLabel.append(descLabelTxt);
+
+  div.append(h4, pLabel, p, priorityLabel, pPriority, descLabel, pDesc);
   div.style.display = 'none';
 
   return div;
