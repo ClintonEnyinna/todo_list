@@ -7,8 +7,13 @@ const addTodoForm = () => {
   const form = element('FORM');
   const inputTitle = element('INPUT');
   inputTitle.setAttribute('placeholder', 'Title');
+  inputTitle.setAttribute('type', 'text');
+
   const inputDate = element('INPUT');
   inputDate.setAttribute('placeholder', 'Due date');
+  inputDate.setAttribute('type', 'text');
+  inputDate.setAttribute('id', 'date');
+
   const priorityDiv = element('DIV');
   const highLabel = element('LABEL');
   highLabel.innerText = 'High';
@@ -19,14 +24,17 @@ const addTodoForm = () => {
 
   const highCheck = element('INPUT');
   highCheck.setAttribute('type', 'radio');
+  highCheck.setAttribute('value', 'high');
   highCheck.setAttribute('name', 'priority');
 
   const mediumCheck = element('INPUT');
   mediumCheck.setAttribute('type', 'radio');
+  mediumCheck.setAttribute('value', 'medium');
   mediumCheck.setAttribute('name', 'priority');
 
   const lowCheck = element('INPUT');
   lowCheck.setAttribute('type', 'radio');
+  lowCheck.setAttribute('value', 'low');
   lowCheck.setAttribute('name', 'priority');
 
   priorityDiv.append(
@@ -37,7 +45,7 @@ const addTodoForm = () => {
     lowLabel,
     lowCheck
   );
-  const inputDesc = element('INPUT');
+  const inputDesc = element('TEXTAREA');
   inputDesc.setAttribute('placeholder', 'Description');
 
   const saveBtn = element('BUTTON');
@@ -45,7 +53,7 @@ const addTodoForm = () => {
 
   form.append(inputTitle, inputDate, priorityDiv, inputDesc, saveBtn);
   div.append(form);
-  div.classList.add('d-none');
+  div.style.display = 'none';
 
   return div;
 };

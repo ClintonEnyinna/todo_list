@@ -2,7 +2,8 @@ import Header from './components/Header';
 import Main from './components/Main';
 import { projectName } from './components/Todos';
 import { todo } from './components/Todo';
-import TodoItem from './components/TodoItem';
+import { TodoItem, TodoItemShow } from './components/TodoItem';
+// import flatpickr from 'flatpickr';
 import './css/style.css';
 
 const page = document.querySelector('#content');
@@ -22,6 +23,7 @@ projectBtn.addEventListener('click', (e) => {
     plusIcon.classList.replace('fa-times', 'fa-plus');
   }
 });
+
 const openTodo = (e) => {
   const mainContent = document.querySelector('#maincontent');
   mainContent.innerHTML = '';
@@ -31,46 +33,61 @@ const openTodo = (e) => {
   const addItem = document.querySelector('.add-item');
 
   addTodoItmBtn.addEventListener('click', () => {
-    if (addItem.style.display === "none") {
-      addItem.style.display = "flex"
-      
+    if (addItem.style.display === 'none') {
+      addItem.style.display = 'flex';
     } else {
-      addItem.style.display = "none"
-
-      
+      addItem.style.display = 'none';
     }
-    
   });
 
-  const addItemForm = document.querySelector('.add-item form')
+  flatpickr('#date', { dateFormat: 'F j, Y' });
+
+  const addItemForm = document.querySelector('.add-item form');
 
   addItemForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const todoItems = document.querySelector('#todo-items');
     let elements = e.target.elements;
-    console.log(e.target.elements[0]);
-    console.log(todoItems);
-    todoItems.append(TodoItem(elements[0].value, elements[1].value));
-    
-    if (addItem.style.display === "none") {
-      addItem.style.display = "flex"
-      
-    } else {
-      addItem.style.display = "none"
 
-      
+    const checkedPriority = document.querySelector(
+      'input[name="priority"]:checked'
+    ).value;
+
+    const li = TodoItem(elements[0].value, elements[1].value);
+    const todoShowDiv = TodoItemShow(
+      elements[0].value,
+      elements[1].value,
+      checkedPriority,
+      elements[5].value
+    );
+    todoItems.append(li);
+    mainContent.append(todoShowDiv);
+
+    if (addItem.style.display === 'none') {
+      addItem.style.display = 'flex';
+    } else {
+      addItem.style.display = 'none';
     }
     addItemForm.reset();
+
+    const showMore = (e) => {
+      console.log(e.target);
+      if (todoShowDiv.style.display === 'none') {
+        todoShowDiv.style.display = 'block';
+      } else {
+        todoShowDiv.style.display = 'none';
+      }
+    };
+
+    li.addEventListener('click', showMore);
   });
-    // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function (event) {
     if (event.target == addItem) {
-      addItem.style.display = "none";
+      addItem.style.display = 'none';
     }
-  }
+  };
 };
-
-
 
 document.querySelector('.projectdiv form').addEventListener('submit', (e) => {
   e.preventDefault();
@@ -83,5 +100,3 @@ document.querySelector('.projectdiv form').addEventListener('submit', (e) => {
   plusIcon.classList.replace('fa-times', 'fa-plus');
   e.target.elements[0].value = '';
 });
-
-
