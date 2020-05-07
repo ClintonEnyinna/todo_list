@@ -2,12 +2,11 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import { projectName } from "./components/Todos";
 import { todo } from "./components/Todo";
-import { TodoItem, TodoItemShow } from "./components/TodoItem";
+import { TodoItem } from "./components/TodoItem";
 import {
   data,
   getAllItemData,
   getGroupItems,
-  getGroup,
   addGroup,
   addGroupItems,
 } from "./components/data";

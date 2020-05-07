@@ -31,23 +31,19 @@ const TodoItemShow = () => {
   div.setAttribute('id', 'show-content');
   const h4 = element('H4');
   h4.setAttribute('id','title')
-  // const h4Txt = text(title);
-  // h4.append(h4Txt);
+  
 
   const p = element('P');
   p.setAttribute("id", "due-date")
-  // const pTxt = text(dueDate);
-  // p.append(pTxt);
+ 
 
   const pPriority = element('P');
   pPriority.setAttribute("id", "priority")
-  // const priorityTxt = text(priority);
-  // pPriority.append(priorityTxt);
+ 
 
   const pDesc = element('P');
   pDesc.setAttribute("id", "desc")
-  // const descTxt = text(desc);
-  // pDesc.append(descTxt);
+  
 
   //labels
   const plabelTxt = text('Date');
