@@ -26,24 +26,28 @@ const TodoItem = (title, dueDate) => {
   return li;
 };
 
-const TodoItemShow = (title, dueDate, priority, desc) => {
+const TodoItemShow = () => {
   const div = element('DIV');
   div.setAttribute('id', 'show-content');
   const h4 = element('H4');
-  const h4Txt = text(title);
-  h4.append(h4Txt);
+  h4.setAttribute('id','title')
+  // const h4Txt = text(title);
+  // h4.append(h4Txt);
 
   const p = element('P');
-  const pTxt = text(dueDate);
-  p.append(pTxt);
+  p.setAttribute("id", "due-date")
+  // const pTxt = text(dueDate);
+  // p.append(pTxt);
 
   const pPriority = element('P');
-  const priorityTxt = text(priority);
-  pPriority.append(priorityTxt);
+  pPriority.setAttribute("id", "priority")
+  // const priorityTxt = text(priority);
+  // pPriority.append(priorityTxt);
 
   const pDesc = element('P');
-  const descTxt = text(desc);
-  pDesc.append(descTxt);
+  pDesc.setAttribute("id", "desc")
+  // const descTxt = text(desc);
+  // pDesc.append(descTxt);
 
   //labels
   const plabelTxt = text('Date');
