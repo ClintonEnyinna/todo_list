@@ -7,6 +7,8 @@
 
 #todo-items li {
   list-style: none;
+  display: flex;
+  align-items: center;
   border-radius: 4px;
   box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.07);
   padding: 18px;
@@ -15,8 +17,17 @@
   cursor: pointer;
 }
 
+#todo-items li input[type='checkbox'] {
+  margin-right: 20px;
+}
+
 #todo-items div:first-of-type {
-  width: 100%;
+  width: 90%;
+}
+
+#todo-items div:last-of-type {
+  width: 10%;
+  text-align: center;
 }
 
 #todo-items li h5 {

@@ -9,6 +9,7 @@ import {
   getGroupItems,
   addGroup,
   addGroupItems,
+  delTodoItem,
 } from './components/data';
 // import flatpickr from 'flatpickr';
 import './css/style.css';
@@ -60,16 +61,27 @@ const openTodo = (e) => {
     const showMore = (e) => {
       const itemTitle = e.currentTarget.children[1].children[0].innerHTML;
       const itemData = getAllItemData(data, groupName, itemTitle);
+
       document.querySelector('#title').innerText = itemData.title;
       document.querySelector('#due-date').value = itemData.date;
+
       const radio = itemData.priority;
+
       document.querySelector(`#${radio}`).checked = true;
       document.querySelector('#desc').value = itemData.desc;
 
-      if (todoShowDiv.style.display === 'none') {
-        todoShowDiv.style.display = 'block';
+      if (e.target.tagName == 'I') {
+        let showItemTitle = document
+          .querySelector('#title')
+          .innerText.toLowerCase();
+
+        // delTodoItem(data, groupName, showItemTitle);
       } else {
-        todoShowDiv.style.display = 'none';
+        if (todoShowDiv.style.display === 'none') {
+          todoShowDiv.style.display = 'block';
+        } else {
+          todoShowDiv.style.display = 'none';
+        }
       }
     };
     const groupItems = getGroupItems(data, groupName);
@@ -114,14 +126,14 @@ const openTodo = (e) => {
 
   document.querySelector('#editItemForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    const showItemTitle = document
+    let showItemTitle = document
       .querySelector('#title')
       .innerText.toLowerCase();
     const todoTitle = document
       .querySelector('#header-div h2')
       .innerText.toLowerCase();
 
-    const todoItem = getAllItemData(data, todoTitle, showItemTitle);
+    let todoItem = getAllItemData(data, todoTitle, showItemTitle);
     todoItem.date = e.target.elements[0].value;
 
     const radioBtn = document.querySelector('input[name="priority"]:checked')

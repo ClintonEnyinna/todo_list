@@ -4,7 +4,8 @@ import '../css/show_todo.css';
 
 const TodoItem = (title, dueDate) => {
   const li = element('LI');
-  const checkTodo = element('SPAN');
+  const checkTodo = element('INPUT');
+  checkTodo.setAttribute('type', 'checkbox');
   const leftDiv = element('DIV');
   const rightDiv = element('DIV');
 
@@ -18,8 +19,9 @@ const TodoItem = (title, dueDate) => {
 
   leftDiv.append(h5, p);
 
-  const span = element('SPAN');
-  rightDiv.append(span);
+  const delIcon = element('I');
+  delIcon.classList.add('fas', 'fa-trash-alt', 'del-icon');
+  rightDiv.append(delIcon);
 
   li.append(checkTodo, leftDiv, rightDiv);
 
