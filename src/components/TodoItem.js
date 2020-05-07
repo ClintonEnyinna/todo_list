@@ -39,9 +39,6 @@ const TodoItemShow = () => {
   dueDate.setAttribute('type', 'text');
   dueDate.setAttribute('id', 'due-date');
 
-  // const pPriority = element('INPUT');
-  // pPriority.setAttribute('type', 'text');
-  // pPriority.setAttribute('id', 'priority');
   const radioDiv = element('DIV');
 
   const highCheck = element('INPUT');
@@ -62,10 +59,24 @@ const TodoItemShow = () => {
   lowCheck.setAttribute('name', 'priority');
   lowCheck.setAttribute('id', 'low');
 
-  radioDiv.append(highCheck, mediumCheck, lowCheck);
+  const highLabel = element('SPAN');
+  highLabel.innerText = 'High';
+  const lowLabel = element('SPAN');
+  lowLabel.innerText = 'Low';
+  const mediumlabel = element('SPAN');
+  mediumlabel.innerText = 'Medium';
 
-  const pDesc = element('INPUT');
-  pDesc.setAttribute('type', 'text');
+  radioDiv.append(
+    highLabel,
+    highCheck,
+    mediumlabel,
+    mediumCheck,
+    lowLabel,
+    lowCheck
+  );
+
+  const pDesc = element('TEXTAREA');
+  // pDesc.setAttribute('type', 'text');
   pDesc.setAttribute('id', 'desc');
 
   const submitBtn = element('BUTTON');

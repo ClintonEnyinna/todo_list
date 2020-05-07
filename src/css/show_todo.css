@@ -8,16 +8,23 @@
   width: 50%;
   max-width: 300px;
   height: calc(100% - 50px);
-  padding: 25px 10px;
+  padding: 25px 20px;
   box-shadow: -9px 0px 5px 0px rgba(0, 0, 0, 0.01);
 }
 
-#show-content p {
+#show-content input {
   overflow-wrap: break-word;
-  width: 100%;
+  width: calc(100% - 15px);
   height: auto;
   padding-top: 8px;
-  padding-bottom: 20px;
+  padding-bottom: 8px;
+  margin-bottom: 30px;
+}
+
+#show-content form div {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 #show-content h4 {
@@ -28,4 +35,31 @@
 
 #show-content label {
   font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#show-content textarea {
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 40px;
+  padding-left: 15px;
+  width: calc(100% - 15px);
+  border-radius: 4px;
+  outline: none;
+  font-size: 18px;
+}
+
+#show-content button {
+  width: 50%;
+  border-radius: 4px;
+  padding: 10px 15px;
+  border: none;
+  font-size: 18px;
+  background-color: #234083;
+  color: #fff;
+  cursor: pointer;
+}
+
+#show-content button:hover {
+  background-color: #294994;
 }
