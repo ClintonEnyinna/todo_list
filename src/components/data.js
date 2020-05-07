@@ -57,4 +57,11 @@ const getAllItemData = (data, groupName, titleName) => {
   return itemData;
 };
 
-export { data, getAllItemData, getGroupItems, addGroup, addGroupItems };
+const delTodoItem = (data, groupName, titleName) => {
+  const getGroupIndex = data.findIndex(({ group }) => group === groupName)
+  const getGroupItemsIdex = data[getGroupIndex].items.findIndex(({title}) =>title === titleName )
+  data[getGroupIndex].items.splice(getGroupItemsIdex, 1)
+}
+
+export { data, getAllItemData, getGroupItems, addGroup, addGroupItems, delTodoItem };
+

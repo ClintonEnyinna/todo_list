@@ -75,7 +75,11 @@ const openTodo = (e) => {
           .querySelector('#title')
           .innerText.toLowerCase();
 
-        // delTodoItem(data, groupName, showItemTitle);
+        delTodoItem(data, groupName, showItemTitle);
+        localStorage.setItem('data', JSON.stringify(data));
+        todoItems.innerHTML = '';
+        loadGroupItems();
+
       } else {
         if (todoShowDiv.style.display === 'none') {
           todoShowDiv.style.display = 'block';
