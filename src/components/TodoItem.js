@@ -28,22 +28,48 @@ const TodoItem = (title, dueDate) => {
 
 const TodoItemShow = () => {
   const div = element('DIV');
+  const form = element('FORM');
+  form.setAttribute('id', 'editItemForm');
+
   div.setAttribute('id', 'show-content');
   const h4 = element('H4');
-  h4.setAttribute('id','title')
-  
+  h4.setAttribute('id', 'title');
 
-  const p = element('P');
-  p.setAttribute("id", "due-date")
- 
+  const dueDate = element('INPUT');
+  dueDate.setAttribute('type', 'text');
+  dueDate.setAttribute('id', 'due-date');
 
-  const pPriority = element('P');
-  pPriority.setAttribute("id", "priority")
- 
+  // const pPriority = element('INPUT');
+  // pPriority.setAttribute('type', 'text');
+  // pPriority.setAttribute('id', 'priority');
+  const radioDiv = element('DIV');
 
-  const pDesc = element('P');
-  pDesc.setAttribute("id", "desc")
-  
+  const highCheck = element('INPUT');
+  highCheck.setAttribute('type', 'radio');
+  highCheck.setAttribute('value', 'high');
+  highCheck.setAttribute('name', 'priority');
+  highCheck.setAttribute('id', 'high');
+
+  const mediumCheck = element('INPUT');
+  mediumCheck.setAttribute('type', 'radio');
+  mediumCheck.setAttribute('value', 'medium');
+  mediumCheck.setAttribute('name', 'priority');
+  mediumCheck.setAttribute('id', 'medium');
+
+  const lowCheck = element('INPUT');
+  lowCheck.setAttribute('type', 'radio');
+  lowCheck.setAttribute('value', 'low');
+  lowCheck.setAttribute('name', 'priority');
+  lowCheck.setAttribute('id', 'low');
+
+  radioDiv.append(highCheck, mediumCheck, lowCheck);
+
+  const pDesc = element('INPUT');
+  pDesc.setAttribute('type', 'text');
+  pDesc.setAttribute('id', 'desc');
+
+  const submitBtn = element('BUTTON');
+  submitBtn.innerText = 'Edit';
 
   //labels
   const plabelTxt = text('Date');
@@ -58,7 +84,17 @@ const TodoItemShow = () => {
   const descLabel = element('LABEL');
   descLabel.append(descLabelTxt);
 
-  div.append(h4, pLabel, p, priorityLabel, pPriority, descLabel, pDesc);
+  form.append(
+    pLabel,
+    dueDate,
+    priorityLabel,
+    radioDiv,
+    descLabel,
+    pDesc,
+    submitBtn
+  );
+  div.append(h4, form);
+
   div.style.display = 'none';
 
   return div;

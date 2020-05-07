@@ -1,20 +1,21 @@
 let data = [
   {
-    group: "projects",
+    group: 'projects',
     items: [],
   },
 
   {
-    group: "work",
+    group: 'work',
     items: [],
   },
   {
-    group: "music",
+    group: 'music',
     items: [],
   },
 ];
 
-const myData = JSON.parse(localStorage.getItem("data"));
+const myData = JSON.parse(localStorage.getItem('data'));
+
 if (myData) {
   data = myData;
 }
@@ -30,14 +31,14 @@ const addGroupItems = (data, groupName, title, date, priority, desc) => {
     priority: priority,
     desc: desc,
   });
-  localStorage.setItem("data", JSON.stringify(data));
+  localStorage.setItem('data', JSON.stringify(data));
 };
 
 // add a group to the data
 // name is a string
 const addGroup = (data, name) => {
   data.push({ group: name, items: [] });
-  localStorage.setItem("data", JSON.stringify(data));
+  localStorage.setItem('data', JSON.stringify(data));
 };
 
 // get items given group name
