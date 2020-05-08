@@ -45,15 +45,14 @@ const openTodo = (e) => {
   const addItem = document.querySelector('.add-item');
 
   if (e.target.tagName == 'I') {
-    const gName = e.currentTarget.innerText.toLowerCase()
-    
-    const getGroupIndex = data.findIndex(({ group }) => group === gName)
-    data.splice(getGroupIndex, 1)
+    const gName = e.currentTarget.innerText.toLowerCase();
+
+    const getGroupIndex = data.findIndex(({ group }) => group === gName);
+    data.splice(getGroupIndex, 1);
     localStorage.setItem('data', JSON.stringify(data));
     projects.innerHTML = '';
     loadGroups();
   }
-
 
   addTodoItmBtn.addEventListener('click', () => {
     if (addItem.style.display === 'none') {
@@ -91,7 +90,13 @@ const openTodo = (e) => {
         localStorage.setItem('data', JSON.stringify(data));
         todoItems.innerHTML = '';
         loadGroupItems();
-
+      } else if (e.target.tagName == 'INPUT') {
+        let todoItem = e.target.nextSibling.firstChild;
+        if (todoItem.style.textDecoration == 'line-through') {
+          todoItem.style.textDecoration = 'none';
+        } else {
+          todoItem.style.textDecoration = 'line-through';
+        }
       } else {
         if (todoShowDiv.style.display === 'none') {
           todoShowDiv.style.display = 'block';
@@ -101,11 +106,13 @@ const openTodo = (e) => {
       }
     };
     const groupItems = getGroupItems(data, groupName);
-    for (let index = 0; index < groupItems.items.length; index++) {
-      const element = groupItems.items[index];
-      const li = TodoItem(element.title, element.date);
-      todoItems.append(li);
-      li.addEventListener('click', showMore);
+    if (groupItems) {
+      for (let index = 0; index < groupItems.items.length; index++) {
+        const element = groupItems.items[index];
+        const li = TodoItem(element.title, element.date);
+        todoItems.append(li);
+        li.addEventListener('click', showMore);
+      }
     }
   };
   loadGroupItems();
@@ -184,26 +191,18 @@ document.querySelector('.projectdiv form').addEventListener('submit', (e) => {
   e.target.elements[0].value = '';
 });
 
-
-
 const loadGroups = (e) => {
   for (let index = 0; index < data.length; index++) {
     const element = data[index].group;
     let li;
-    if (element == "projects" || element == "work" || element == "music") {
-      li = projectName(element, "fixed");
-    
-    
-    }else{
+    if (element == 'projects' || element == 'work' || element == 'music') {
+      li = projectName(element, 'fixed');
+    } else {
       li = projectName(element);
-
     }
-    
+
     projects.append(li);
     li.addEventListener('click', openTodo);
-    
   }
- 
-
 };
 loadGroups();
