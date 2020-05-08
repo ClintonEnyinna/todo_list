@@ -9,6 +9,7 @@ const Header = () => {
   const p = element('P');
   const pTxt = text('2-do');
   const input = element('INPUT');
+  input.setAttribute('id', 'search');
   input.setAttribute('type', 'text');
   input.setAttribute('placeholder', 'Search...');
 

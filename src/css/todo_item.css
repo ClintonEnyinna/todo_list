@@ -19,6 +19,24 @@
 
 #todo-items li input[type='checkbox'] {
   margin-right: 20px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  transition: all 0.3s;
+}
+
+#todo-items li input[type='checkbox']:checked {
+  background-color: #2ecc71;
+}
+#todo-items li input[type='checkbox']:focus {
+  outline: 0 none;
+  box-shadow: none;
 }
 
 #todo-items div:first-of-type {

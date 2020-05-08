@@ -38,6 +38,7 @@ const openTodo = (e) => {
   const mainContent = document.querySelector('#maincontent');
   const todoShowDiv = document.querySelector('#show-content');
   const groupName = e.target.innerText.toLowerCase();
+  document.querySelector('#search').value = '';
   mainContent.innerHTML = '';
   mainContent.appendChild(todo(groupName));
 
@@ -91,11 +92,15 @@ const openTodo = (e) => {
         todoItems.innerHTML = '';
         loadGroupItems();
       } else if (e.target.tagName == 'INPUT') {
-        let todoItem = e.target.nextSibling.firstChild;
+        let todoItem = e.target.nextSibling;
         if (todoItem.style.textDecoration == 'line-through') {
           todoItem.style.textDecoration = 'none';
+          itemData.status = false;
+          localStorage.setItem('data', JSON.stringify(data));
         } else {
           todoItem.style.textDecoration = 'line-through';
+          itemData.status = true;
+          localStorage.setItem('data', JSON.stringify(data));
         }
       } else {
         if (todoShowDiv.style.display === 'none') {
@@ -110,10 +115,35 @@ const openTodo = (e) => {
       for (let index = 0; index < groupItems.items.length; index++) {
         const element = groupItems.items[index];
         const li = TodoItem(element.title, element.date);
+        if (element.status === true) {
+          li.firstChild.checked = true;
+          li.firstChild.nextSibling.style.textDecoration = 'line-through';
+        }
         todoItems.append(li);
         li.addEventListener('click', showMore);
       }
     }
+
+    document.querySelector('#search').addEventListener('keyup', (e) => {
+      let todoGroup = data.find(({ group }) => group === groupName);
+      todoItems.innerHTML = '';
+      for (let i = 0; i < todoGroup.items.length; i++) {
+        let str = todoGroup.items[i].title.toLowerCase();
+        if (str.search(e.target.value) > -1) {
+          const li = TodoItem(
+            todoGroup.items[i].title,
+            todoGroup.items[i].date
+          );
+          console.log(li);
+          if (todoGroup.items[i].title.status === true) {
+            li.firstChild.checked = true;
+            li.firstChild.nextSibling.style.textDecoration = 'line-through';
+          }
+          todoItems.append(li);
+          li.addEventListener('click', showMore);
+        }
+      }
+    });
   };
   loadGroupItems();
   flatpickr('#due-date', { dateFormat: 'F j, Y' });
@@ -122,7 +152,6 @@ const openTodo = (e) => {
     e.preventDefault();
 
     let elements = e.target.elements;
-
     const checkedPriority = document.querySelector(
       'input[name="priority"]:checked'
     ).value;

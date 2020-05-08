@@ -3,7 +3,6 @@ let data = [
     group: 'projects',
     items: [],
   },
-
   {
     group: 'work',
     items: [],
@@ -23,13 +22,22 @@ if (myData) {
 // add items to a group
 // groupName is a string
 
-const addGroupItems = (data, groupName, title, date, priority, desc) => {
+const addGroupItems = (
+  data,
+  groupName,
+  title,
+  date,
+  priority,
+  desc,
+  status = false
+) => {
   const getGroupIndex = data.findIndex(({ group }) => group === groupName);
   data[getGroupIndex].items.push({
     title: title,
     date: date,
     priority: priority,
     desc: desc,
+    status: status,
   });
   localStorage.setItem('data', JSON.stringify(data));
 };
@@ -58,10 +66,18 @@ const getAllItemData = (data, groupName, titleName) => {
 };
 
 const delTodoItem = (data, groupName, titleName) => {
-  const getGroupIndex = data.findIndex(({ group }) => group === groupName)
-  const getGroupItemsIdex = data[getGroupIndex].items.findIndex(({title}) =>title === titleName )
-  data[getGroupIndex].items.splice(getGroupItemsIdex, 1)
-}
+  const getGroupIndex = data.findIndex(({ group }) => group === groupName);
+  const getGroupItemsIdex = data[getGroupIndex].items.findIndex(
+    ({ title }) => title === titleName
+  );
+  data[getGroupIndex].items.splice(getGroupItemsIdex, 1);
+};
 
-export { data, getAllItemData, getGroupItems, addGroup, addGroupItems, delTodoItem };
-
+export {
+  data,
+  getAllItemData,
+  getGroupItems,
+  addGroup,
+  addGroupItems,
+  delTodoItem,
+};
