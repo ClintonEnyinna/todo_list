@@ -9,12 +9,23 @@ const projects = () => {
   return parentDiv;
 };
 
-const projectName = (name) => {
+const projectName = (name, type = "dynamic") => {
+
   const li = element('LI');
   const icon = element('I');
-  icon.setAttribute('class', 'fas fa-list-ul');
   const liText = text(name);
-  li.append(icon, liText);
+  if (type !== "fixed") {
+    const delIcon = element('I')
+    delIcon.classList.add('fas', "fa-trash-alt", 'delIcon');
+    li.append(icon, liText, delIcon);
+
+  } else {
+    icon.setAttribute('class', 'fas fa-list-ul');
+
+    li.append(icon, liText);
+
+  }
+
 
   return li;
 };

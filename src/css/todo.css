@@ -28,3 +28,7 @@ li i {
   padding-right: 10px;
   font-size: 16px;
 }
+
+.delIcon {
+  float: right;
+}

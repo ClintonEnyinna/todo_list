@@ -19,6 +19,7 @@ const page = document.querySelector('#content');
 page.append(Header(), Main());
 
 const projectBtn = document.getElementById('addTodoBtn');
+const projects = document.getElementById('projects');
 
 const projectDiv = document.querySelector('.projectdiv');
 
@@ -42,6 +43,17 @@ const openTodo = (e) => {
 
   const addTodoItmBtn = document.querySelector('#add-itm-btn');
   const addItem = document.querySelector('.add-item');
+
+  if (e.target.tagName == 'I') {
+    const gName = e.currentTarget.innerText.toLowerCase()
+    
+    const getGroupIndex = data.findIndex(({ group }) => group === gName)
+    data.splice(getGroupIndex, 1)
+    localStorage.setItem('data', JSON.stringify(data));
+    projects.innerHTML = '';
+    loadGroups();
+  }
+
 
   addTodoItmBtn.addEventListener('click', () => {
     if (addItem.style.display === 'none') {
@@ -172,14 +184,26 @@ document.querySelector('.projectdiv form').addEventListener('submit', (e) => {
   e.target.elements[0].value = '';
 });
 
-const projects = document.getElementById('projects');
 
-const loadGroups = () => {
+
+const loadGroups = (e) => {
   for (let index = 0; index < data.length; index++) {
     const element = data[index].group;
-    const li = projectName(element);
+    let li;
+    if (element == "projects" || element == "work" || element == "music") {
+      li = projectName(element, "fixed");
+    
+    
+    }else{
+      li = projectName(element);
+
+    }
+    
     projects.append(li);
     li.addEventListener('click', openTodo);
+    
   }
+ 
+
 };
 loadGroups();
