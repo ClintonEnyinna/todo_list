@@ -1,4 +1,4 @@
-import { element, text } from './MakeElements';
+import { element } from './MakeElements';
 import '../css/addTodo.css';
 
 const addTodoButton = () => {

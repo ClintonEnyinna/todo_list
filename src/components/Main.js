@@ -1,9 +1,8 @@
-import { element, text } from './MakeElements';
+import { element } from './MakeElements';
 import addTodo from './AddTodo';
 import { projects } from './Todos';
 import '../css/main.css';
-import {TodoItemShow} from './TodoItem'
-
+import { TodoItemShow } from './TodoItem';
 
 
 const Main = () => {

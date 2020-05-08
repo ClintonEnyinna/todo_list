@@ -25,4 +25,4 @@ const todo = (todo) => {
   return div;
 };
 
-export { todo };
+export default todo;

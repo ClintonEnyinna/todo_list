@@ -74,7 +74,7 @@ const TodoItemShow = () => {
     mediumlabel,
     mediumCheck,
     lowLabel,
-    lowCheck
+    lowCheck,
   );
 
   const pDesc = element('TEXTAREA');
@@ -84,7 +84,7 @@ const TodoItemShow = () => {
   const submitBtn = element('BUTTON');
   submitBtn.innerText = 'Edit';
 
-  //labels
+  // labels
   const plabelTxt = text('Date');
   const pLabel = element('LABEL');
   pLabel.append(plabelTxt);
@@ -104,7 +104,7 @@ const TodoItemShow = () => {
     radioDiv,
     descLabel,
     pDesc,
-    submitBtn
+    submitBtn,
   );
   div.append(h4, form);
 

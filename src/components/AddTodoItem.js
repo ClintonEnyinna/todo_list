@@ -1,4 +1,4 @@
-import { element, text } from './MakeElements';
+import { element } from './MakeElements';
 import '../css/add_todo_item.css';
 
 const addTodoForm = () => {
@@ -43,7 +43,7 @@ const addTodoForm = () => {
     mediumlabel,
     mediumCheck,
     lowLabel,
-    lowCheck
+    lowCheck,
   );
   const inputDesc = element('TEXTAREA');
   inputDesc.setAttribute('placeholder', 'Description');
