@@ -48,7 +48,9 @@ const openTodo = (e) => {
   if (e.target.tagName == 'I') {
     const gName = e.currentTarget.innerText.toLowerCase();
 
-    const getGroupIndex = data.findIndex(({ group }) => group === gName);
+    const getGroupIndex = data.findIndex(
+      ({ group }) => group.toLowerCase() === gName.toLowerCase()
+    );
     data.splice(getGroupIndex, 1);
     localStorage.setItem('data', JSON.stringify(data));
     projects.innerHTML = '';
@@ -125,7 +127,9 @@ const openTodo = (e) => {
     }
 
     document.querySelector('#search').addEventListener('keyup', (e) => {
-      let todoGroup = data.find(({ group }) => group === groupName);
+      let todoGroup = data.find(
+        ({ group }) => group.toLowerCase() === groupName.toLowerCase()
+      );
       todoItems.innerHTML = '';
       for (let i = 0; i < todoGroup.items.length; i++) {
         let str = todoGroup.items[i].title.toLowerCase();
@@ -134,7 +138,6 @@ const openTodo = (e) => {
             todoGroup.items[i].title,
             todoGroup.items[i].date
           );
-          console.log(li);
           if (todoGroup.items[i].title.status === true) {
             li.firstChild.checked = true;
             li.firstChild.nextSibling.style.textDecoration = 'line-through';
