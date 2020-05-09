@@ -1,0 +1,34 @@
+aside div:last-child {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 320px;
+}
+
+aside div:last-child ul {
+  margin: 0;
+  padding: 0;
+  width: 320px;
+  list-style: none;
+}
+
+aside div:last-child ul li {
+  padding: 20px 0 20px 20px;
+  font-size: 18px;
+  width: calc(100% - 20px);
+  font-weight: 600;
+  text-transform: capitalize;
+  border-bottom: 1px solid #ddd;
+  color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+li i {
+  color: rgba(0, 0, 0, 0.8);
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+.delIcon {
+  float: right;
+}
