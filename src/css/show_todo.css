@@ -5,7 +5,7 @@
   color: rgba(0, 0, 0, 0.8);
   top: 0;
   right: 0;
-  width: 50%;
+  width: 25%;
   max-width: 300px;
   height: calc(100% - 50px);
   padding: 25px 20px;
@@ -50,7 +50,7 @@
 }
 
 #show-content button {
-  width: 50%;
+  width: 100%;
   border-radius: 4px;
   padding: 10px 15px;
   border: none;
@@ -62,4 +62,11 @@
 
 #show-content button:hover {
   background-color: #294994;
+}
+
+@media only screen and (max-width: 767px) {
+  #show-content {
+    width: 40%;
+    padding: 15px 10px;
+  }
 }
