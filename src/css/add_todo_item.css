@@ -133,7 +133,8 @@
 
 @media only screen and (max-width: 1000px) {
   .add-item form {
-    width: 60%;
+    width: 70%;
+    padding: 15px;
   }
 }
 
@@ -151,5 +152,10 @@
   #header-div button {
     width: 30px;
     height: 30px;
+  }
+
+  .add-item form {
+    padding: 15px;
+    width: 75%;
   }
 }

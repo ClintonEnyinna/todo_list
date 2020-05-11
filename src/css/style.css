@@ -1,6 +1,8 @@
+html,
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
 }
 
 ul,
@@ -11,4 +13,9 @@ main,
 aside,
 header {
   box-sizing: border-box;
+}
+
+#content {
+  height: 100%;
+  width: 100%;
 }
