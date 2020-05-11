@@ -1,3 +1,4 @@
+import flatpickr from 'flatpickr';
 import Header from './components/Header';
 import Main from './components/Main';
 import { projectName } from './components/Todos';
@@ -10,7 +11,7 @@ import {
   addGroupItems,
   delTodoItem,
 } from './components/data';
-// import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css';
 import './css/style.css';
 
 let data = [
@@ -33,7 +34,6 @@ const myData = JSON.parse(localStorage.getItem('data'));
 if (myData) {
   data = myData;
 }
-
 
 const page = document.querySelector('#content');
 
@@ -100,7 +100,6 @@ const openTodo = (e) => {
       addItem.style.display = 'none';
     }
   });
-
 
   // eslint-disable-next-line no-undef
   flatpickr('#date', { dateFormat: 'F j, Y' });
@@ -259,6 +258,5 @@ document.querySelector('.projectdiv form').addEventListener('submit', (e) => {
   plusIcon.classList.replace('fa-times', 'fa-plus');
   e.target.elements[0].value = '';
 });
-
 
 loadGroups();
