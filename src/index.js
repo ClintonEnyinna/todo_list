@@ -1,7 +1,8 @@
+import flatpickr from 'flatpickr';
 import Header from './components/Header';
 import Main from './components/Main';
 import { projectName } from './components/Todos';
-import todo from './components/Todo';
+import Todo from './components/Todo';
 import { TodoItem } from './components/TodoItem';
 import {
   getAllItemData,
@@ -10,7 +11,7 @@ import {
   addGroupItems,
   delTodoItem,
 } from './components/data';
-// import flatpickr from 'flatpickr';
+import 'flatpickr/dist/flatpickr.min.css';
 import './css/style.css';
 
 let data = [
@@ -33,7 +34,6 @@ const myData = JSON.parse(localStorage.getItem('data'));
 if (myData) {
   data = myData;
 }
-
 
 const page = document.querySelector('#content');
 
@@ -73,15 +73,14 @@ const loadGroups = () => {
 const openTodo = (e) => {
   const mainContent = document.querySelector('#maincontent');
   const todoShowDiv = document.querySelector('#show-content');
-  const groupName = e.target.innerText.toLowerCase();
+  const groupName = e.currentTarget.innerText.toLowerCase();
   document.querySelector('#search').value = '';
   mainContent.innerHTML = '';
-  mainContent.appendChild(todo(groupName));
+  mainContent.appendChild(Todo(groupName));
 
   const addTodoItmBtn = document.querySelector('#add-itm-btn');
   const addItem = document.querySelector('.add-item');
-
-  if (e.target.tagName === 'I') {
+  if (e.target.classList.contains('delIcon')) {
     const gName = e.currentTarget.innerText.toLowerCase();
 
     const getGroupIndex = data.findIndex(
@@ -96,11 +95,11 @@ const openTodo = (e) => {
   addTodoItmBtn.addEventListener('click', () => {
     if (addItem.style.display === 'none') {
       addItem.style.display = 'flex';
+      document.querySelector('input[value="high"]').checked = true;
     } else {
       addItem.style.display = 'none';
     }
   });
-
 
   // eslint-disable-next-line no-undef
   flatpickr('#date', { dateFormat: 'F j, Y' });
@@ -259,6 +258,5 @@ document.querySelector('.projectdiv form').addEventListener('submit', (e) => {
   plusIcon.classList.replace('fa-times', 'fa-plus');
   e.target.elements[0].value = '';
 });
-
 
 loadGroups();

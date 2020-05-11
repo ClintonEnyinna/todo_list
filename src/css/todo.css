@@ -2,20 +2,20 @@ aside div:last-child {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 320px;
+  width: 100%;
 }
 
 aside div:last-child ul {
   margin: 0;
   padding: 0;
-  width: 320px;
+  width: 100%;
   list-style: none;
 }
 
 aside div:last-child ul li {
   padding: 20px 0 20px 20px;
   font-size: 18px;
-  width: calc(100% - 20px);
+  width: 100%;
   font-weight: 600;
   text-transform: capitalize;
   border-bottom: 1px solid #ddd;
@@ -31,4 +31,26 @@ li i {
 
 .delIcon {
   float: right;
+}
+
+@media only screen and (max-width: 600px) {
+  aside div:last-child {
+    width: 70px;
+  }
+  span.subject {
+    display: block;
+    font-size: 0.5em;
+  }
+  aside div:last-child ul li {
+    text-align: center;
+    padding: 20px 0;
+  }
+  li i {
+    padding-right: 0;
+  }
+  .delIcon {
+    margin-top: 5px;
+    margin-right: 5px;
+    font-size: 10px;
+  }
 }

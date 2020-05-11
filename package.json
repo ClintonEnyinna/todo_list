@@ -23,14 +23,16 @@
   "homepage": "https://github.com/ClintonEnyinna/todo_list#readme",
   "devDependencies": {
     "css-loader": "^3.5.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.2",
     "file-loader": "^6.0.0",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.13.0"
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "flatpickr": "^4.6.3"
   }
 }

@@ -21,8 +21,11 @@
 }
 
 #header-div button {
-  width: 35px;
-  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   border: none;
   background-color: #234083;
@@ -51,20 +54,44 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  padding: 50px;
+  padding: 30px;
   border-radius: 8px;
 }
 
 .add-item form input,
-.add-item form div,
 .add-item form button,
 .add-item form textarea {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   padding: 7px;
 }
 
-.add-item form div {
+.priority {
+  display: flex;
+  flex-direction: column;
   width: 100%;
+}
+
+.priority h6 {
+  margin: 0;
+  font-size: 17px;
+  text-align: center;
+  color: #242e50;
+}
+
+.priority div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  white-space: nowrap;
+  text-align: center;
+  font-size: 16px;
+}
+
+.add-item form div input[type='radio'] {
+  margin: 0 10px 0 5px;
 }
 
 .add-item form button {
@@ -74,12 +101,17 @@
   box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.4);
   color: white;
   cursor: pointer;
+  height: 37px;
+  font-size: 18px;
 }
 
-.add-item form input {
-  border: 2px solid slateblue;
-  border-radius: 4px;
-  height: 30px;
+.add-item input[type='text'] {
+  height: 37px;
+}
+
+.add-item form input[type='text']:focus,
+.add-item form textarea:focus {
+  border: 1px solid #234083;
 }
 
 .add-item form input[type='text'],
@@ -87,10 +119,37 @@
   width: calc(100% - 19px);
   padding: 0 0 0 15px;
   font-size: 18px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  background-color: rgba(153, 208, 251, 0.2);
+  outline: none;
 }
 
 .add-item form textarea {
-  border-radius: 4px;
-  border: 2px solid slateblue;
-  outline: none;
+  height: 60px;
+  resize: none;
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .add-item form {
+    width: 60%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #maincontent {
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #header-div h2 {
+    font-size: 16px;
+  }
+
+  #header-div button {
+    width: 30px;
+    height: 30px;
+  }
 }
