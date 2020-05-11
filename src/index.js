@@ -168,7 +168,7 @@ const openTodo = (e) => {
       todoItems.innerHTML = '';
       for (let i = 0; i < todoGroup.items.length; i += 1) {
         const str = todoGroup.items[i].title.toLowerCase();
-        if (str.search(e.target.value) > -1) {
+        if (str.search(e.target.value.toLowerCase()) > -1) {
           const li = TodoItem(
             todoGroup.items[i].title,
             todoGroup.items[i].date,
