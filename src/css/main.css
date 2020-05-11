@@ -13,3 +13,21 @@ main aside {
 main div {
   width: calc(100% - 320px);
 }
+
+@media only screen and (max-width: 767px) {
+  main aside {
+    width: 250px;
+  }
+  main div {
+    width: calc(100% - 250px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main aside {
+    width: 70px;
+  }
+  main div {
+    width: calc(100% - 70px);
+  }
+}

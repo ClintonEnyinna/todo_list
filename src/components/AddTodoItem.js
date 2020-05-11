@@ -1,4 +1,4 @@
-import { element } from './MakeElements';
+import { element, text } from './MakeElements';
 import '../css/add_todo_item.css';
 
 const addTodoForm = () => {
@@ -13,6 +13,12 @@ const addTodoForm = () => {
   inputDate.setAttribute('placeholder', 'Due date');
   inputDate.setAttribute('type', 'text');
   inputDate.setAttribute('id', 'date');
+
+  const parentDiv = element('DIV');
+  parentDiv.setAttribute('class', 'priority');
+  const h6 = element('H6');
+  const h6Txt = text('Priority');
+  h6.append(h6Txt);
 
   const priorityDiv = element('DIV');
   const highLabel = element('LABEL');
@@ -45,13 +51,15 @@ const addTodoForm = () => {
     lowLabel,
     lowCheck,
   );
+
+  parentDiv.append(h6, priorityDiv);
   const inputDesc = element('TEXTAREA');
   inputDesc.setAttribute('placeholder', 'Description');
 
   const saveBtn = element('BUTTON');
   saveBtn.innerText = 'Create';
 
-  form.append(inputTitle, inputDate, priorityDiv, inputDesc, saveBtn);
+  form.append(inputTitle, inputDate, parentDiv, inputDesc, saveBtn);
   div.append(form);
   div.style.display = 'none';
 

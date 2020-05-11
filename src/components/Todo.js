@@ -2,7 +2,7 @@ import { element, text } from './MakeElements';
 import AddTodoForm from './AddTodoItem';
 import '../css/todo.css';
 
-const todo = (todo) => {
+const Todo = (todo) => {
   const div = element('DIV');
   const headerDiv = element('DIV');
   headerDiv.setAttribute('id', 'header-div');
@@ -25,4 +25,4 @@ const todo = (todo) => {
   return div;
 };
 
-export default todo;
+export default Todo;

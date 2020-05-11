@@ -57,3 +57,28 @@ input[type='text'] {
 input[type='text']:focus {
   background-color: #fff;
 }
+
+@media only screen and (max-width: 767px) {
+  nav div:first-child {
+    width: 250px;
+  }
+  nav div:last-child {
+    width: calc(100% - 250px);
+  }
+
+  input[type='text'] {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  nav div:first-child {
+    width: 70px;
+  }
+  nav div:last-child {
+    width: calc(100% - 70px);
+  }
+  nav div:first-child p {
+    font-size: 20px;
+  }
+}
