@@ -102,7 +102,7 @@ const openTodo = (e) => {
   });
 
   // eslint-disable-next-line no-undef
-  flatpickr('#date', { dateFormat: 'F j, Y' });
+  flatpickr('#date', { dateFormat: 'F j, Y', defaultDate: 'today' });
 
   const addItemForm = document.querySelector('.add-item form');
 
@@ -185,7 +185,10 @@ const openTodo = (e) => {
   };
   loadGroupItems();
   // eslint-disable-next-line no-undef
-  flatpickr('#due-date', { dateFormat: 'F j, Y' });
+  flatpickr('#due-date', {
+    dateFormat: 'F j, Y',
+    defaultDate: 'today',
+  });
 
   addItemForm.addEventListener('submit', (e) => {
     e.preventDefault();

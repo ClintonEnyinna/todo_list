@@ -1,5 +1,6 @@
 main {
   display: flex;
+  position: relative;
   height: calc(100% - 50px);
 }
 
