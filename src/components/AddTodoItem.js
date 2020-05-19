@@ -49,12 +49,13 @@ const addTodoForm = () => {
     mediumlabel,
     mediumCheck,
     lowLabel,
-    lowCheck,
+    lowCheck
   );
 
   parentDiv.append(h6, priorityDiv);
   const inputDesc = element('TEXTAREA');
   inputDesc.setAttribute('placeholder', 'Description');
+  inputDesc.setAttribute('id', 'todoItemDesc');
 
   const saveBtn = element('BUTTON');
   saveBtn.innerText = 'Create';

@@ -105,17 +105,23 @@
   font-size: 18px;
 }
 
+.flatpickr-input {
+  -webkit-appearance: none;
+}
+
 .add-item input[type='text'] {
   height: 37px;
 }
 
 .add-item form input[type='text']:focus,
-.add-item form textarea:focus {
+.add-item form textarea:focus,
+.flatpickr-input:focus {
   border: 1px solid #234083;
 }
 
 .add-item form input[type='text'],
-.add-item form textarea {
+.add-item form textarea,
+.flatpickr-input {
   width: calc(100% - 19px);
   padding: 0 0 0 15px;
   font-size: 18px;

@@ -3,11 +3,11 @@
   flex-direction: column;
   background-color: #fff;
   color: rgba(0, 0, 0, 0.8);
-  top: 0;
+  bottom: 0;
   right: 0;
   width: 25%;
   max-width: 300px;
-  height: calc(100% - 50px);
+  height: 100%;
   padding: 25px 20px;
   box-shadow: -9px 0px 5px 0px rgba(0, 0, 0, 0.01);
 }
