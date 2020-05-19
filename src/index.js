@@ -84,7 +84,7 @@ const openTodo = (e) => {
     const gName = e.currentTarget.innerText.toLowerCase();
 
     const getGroupIndex = data.findIndex(
-      ({ group }) => group.toLowerCase() === gName.toLowerCase()
+      ({ group }) => group.toLowerCase() === gName.toLowerCase(),
     );
     data.splice(getGroupIndex, 1);
     localStorage.setItem('data', JSON.stringify(data));
@@ -163,7 +163,7 @@ const openTodo = (e) => {
 
     document.querySelector('#search').addEventListener('keyup', (e) => {
       const todoGroup = data.find(
-        ({ group }) => group.toLowerCase() === groupName.toLowerCase()
+        ({ group }) => group.toLowerCase() === groupName.toLowerCase(),
       );
       todoItems.innerHTML = '';
       for (let i = 0; i < todoGroup.items.length; i += 1) {
@@ -171,7 +171,7 @@ const openTodo = (e) => {
         if (str.search(e.target.value.toLowerCase()) > -1) {
           const li = TodoItem(
             todoGroup.items[i].title,
-            todoGroup.items[i].date
+            todoGroup.items[i].date,
           );
           if (todoGroup.items[i].title.status === true) {
             li.firstChild.checked = true;
@@ -192,7 +192,7 @@ const openTodo = (e) => {
 
     const { elements } = e.target;
     const checkedPriority = document.querySelector(
-      'input[name="priority"]:checked'
+      'input[name="priority"]:checked',
     ).value;
     const todoItemDesc = document.querySelector('#todoItemDesc').value;
 
@@ -202,7 +202,7 @@ const openTodo = (e) => {
       elements[0].value,
       elements[1].value,
       checkedPriority,
-      todoItemDesc
+      todoItemDesc,
     );
 
     todoItems.innerHTML = '';

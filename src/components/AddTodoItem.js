@@ -49,7 +49,7 @@ const addTodoForm = () => {
     mediumlabel,
     mediumCheck,
     lowLabel,
-    lowCheck
+    lowCheck,
   );
 
   parentDiv.append(h6, priorityDiv);

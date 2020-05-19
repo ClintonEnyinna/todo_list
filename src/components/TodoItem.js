@@ -74,7 +74,7 @@ const TodoItemShow = () => {
     mediumlabel,
     mediumCheck,
     lowLabel,
-    lowCheck
+    lowCheck,
   );
 
   const pDesc = element('TEXTAREA');
@@ -103,7 +103,7 @@ const TodoItemShow = () => {
     radioDiv,
     descLabel,
     pDesc,
-    submitBtn
+    submitBtn,
   );
   div.append(h4, form);
 
