@@ -30,7 +30,7 @@ The user is able to delete groups and items in the groups as well as mark a task
 
 ## Live Demo
 
-[Live link](https://raw.githack.com/ClintonEnyinna/todo_list/master/dist/index.html)
+[Live link](https://clintonenyinna.github.io/todo_list/dist/index.html)
 
 ## Prerequisites
 
