@@ -8,7 +8,7 @@
 
 # TODO LIST
 
-In this project we implemented the using the concepts of Single Responsibility and Tightly Coupled Objects. The project goal is to have a To-Do List app that allows user to create new task groups. The user can then add task items to each group.
+In this project we implemented the concepts of Single Responsibility and Tightly Coupled Objects. The project goal is to have a To-Do List app that allows user to create new task groups. The user can then add task items to each group.
 
 The user is able to delete groups and items in the groups as well as mark a task complete.
 
