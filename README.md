@@ -43,7 +43,7 @@ The user is able to delete groups and items in the groups as well as mark a task
 Use the [git](https://git-scm.com/downloads) to clone the project to your local machine.
 
 ```sh
-$ git clone https://github.com/ClintonEnyinna/todo_list.gitt
+$ git clone https://github.com/ClintonEnyinna/todo_list.git
 ```
 
 Navigate to the extracted folder
