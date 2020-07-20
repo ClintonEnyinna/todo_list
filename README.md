@@ -12,6 +12,10 @@ In this project we implemented the concepts of Single Responsibility and Tightly
 
 The user is able to delete groups and items in the groups as well as mark a task complete.
 
+## Screenshot
+
+![screenshot](todolist.png)
+
 ## Features
 
 - Create Task group
@@ -36,7 +40,6 @@ The user is able to delete groups and items in the groups as well as mark a task
 
 - Webpack v4.43.0
 - npm
-
 
 ## Setup
 
