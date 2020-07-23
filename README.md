@@ -8,7 +8,7 @@
 
 # TODO LIST
 
-In this project we implemented the concepts of Single Responsibility and Tightly Coupled Objects. The project goal is to have a To-Do List app that allows user to create new task groups. The user can then add task items to each group.
+In this project, we implemented the concepts of Single Responsibility and Tightly Coupled Objects. The project goal is to have a To-Do List app that allows users to create new task groups. The user can then add task items to each group.
 
 The user is able to delete groups and items in the groups as well as mark a task complete.
 
@@ -18,7 +18,7 @@ The user is able to delete groups and items in the groups as well as mark a task
 
 ## Features
 
-- Create Task group
+- Create a Task group
 - Create Task group items
 - Edit a Task group item
 - Delete a Task group
@@ -64,7 +64,7 @@ $ npm install
 ### Usage
 
 ```sh
-$ use live server to render the index
+$ use the live server to render the index
 ```
 
 or to run webpack in production mode
