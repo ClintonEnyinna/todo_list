@@ -43,7 +43,7 @@ The user is able to delete groups and items in the groups as well as mark a task
 
 ## Setup
 
-Use the [git](https://git-scm.com/downloads) to clone the project to your local machine.
+Use the [git](https://git-scm.com/downloads) to clone the project to your local machine
 
 ```sh
 $ git clone https://github.com/ClintonEnyinna/todo_list.git
@@ -83,16 +83,16 @@ npm run watch
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See `LICENSE` for more information
 
 ## Contributors
 
 👤 **Clinton Enyinna**
 
 - Twitter: [@enyinnaclinton ](https://twitter.com/ClintonEnyinna)
-- Github: [@ClintonEnyinna](https://github.com/ClintonEnyinna)
+- GitHub: [@ClintonEnyinna](https://github.com/ClintonEnyinna)
 
 👤 **Stephen Gamba**
 
 - Twitter: [@bafiam_steve ](https://twitter.com/Bafiam_steve)
-- Github: [@Bafiam](https://github.com/bafiam)
+- GitHub: [@Bafiam](https://github.com/bafiam)
