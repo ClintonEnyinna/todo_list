@@ -6,7 +6,7 @@
 
 </p>
 
-# TODO LIST
+# Todo list
 
 In this project, we implemented the concepts of Single Responsibility and Tightly Coupled Objects. The project goal is to have a To-Do List app that allows users to create new task groups. The user can then add task items to each group.
 
@@ -28,9 +28,9 @@ The user is able to delete groups and items in the groups as well as mark a task
 
 ## Built With
 
-- Javascript(ES6)
+- JavaScript (ES6)
 - Webpack
-- NodeJs
+- Node.Js
 
 ## Live Demo
 
@@ -67,13 +67,13 @@ $ npm install
 $ use the live server to render the index
 ```
 
-or to run webpack in production mode
+Or to run webpack in production mode
 
 ```
 npm run build
 ```
 
-or to watch in development mode
+Or to watch in development mode
 
 ```
 npm run watch
